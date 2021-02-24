@@ -31,9 +31,10 @@ Space Agency, are the main ones that make their data publicly available.
 The satellite collects not only visible light, but near-infrared and other "bands" located
 slightly further out on the electromagnetic spectrum.  This is an incredible resource for data
 scientists seeking to draw inference on what is happening on the earth's surface.  These additional
-bands provide a rich source of additional features for running machine learning algorithsm.  For 
-example, water and heavy vegatation may be hard for a computer to discern on the spectrum of visible light,
-but their reflectance measurements are quite different on bands with slightly longer wavelengths.
+bands provide additional features for running machine learning algorithms.  For example, water and 
+heavy vegatation may be hard for a computer to discern on the spectrum of visible light,
+but their reflectance measurements are quite different on bands with slightly longer wavelengths.  The
+Landsat satellite data has 12 variables, as opposed to only 3 for a red, blue green pixel image format.
 
 *** Machine Learning Project Plan:
 
@@ -45,5 +46,6 @@ with the best satellite capture data throughout the time window)
 Step A: Train the data by selectioning specific points and areas within the region
 of known land cover (water, buildings, trees, rocks)
 Step B: Run the algorithm to classify each pixel into the same categories
+Step C: Assess accuracy metrics of the model
 
-3. Compare vegetation loss and building increases across the three time spans
+3. Compare vegetation loss and building increases across the three time spans to discover economic activity.
