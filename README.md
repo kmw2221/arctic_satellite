@@ -2,6 +2,8 @@ The goal of this project is to detect changes in land cover in Arctic cities and
 using publicly available satellite data.
 
 *** Why the Arctic?
+
+
 Thinning sea ice in the Arctic has the potential to transform global shipping.  Sending cargo 
 along the Northern Sea Route, through the Barents Sea and over Sibera, already can reduce
 transit time from the Mediterranean to East Asia by 2 to 3 weeks.  A Transpolar Sea Route, which 
