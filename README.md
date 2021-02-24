@@ -34,7 +34,7 @@ scientists seeking to draw inference on what is happening on the earth's surface
 bands provide additional features for running machine learning algorithms.  For example, water and 
 heavy vegatation may be hard for a computer to discern on the spectrum of visible light,
 but their reflectance measurements are quite different on bands with slightly longer wavelengths.  The
-Landsat satellite data has 12 variables, as opposed to only 3 for a red, blue green pixel image format.
+Landsat satellite data has 12 variables, as opposed to only 3 for a red, blue, green pixel image format.
 
 *** Machine Learning Project Plan:
 
