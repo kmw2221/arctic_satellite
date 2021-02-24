@@ -44,8 +44,8 @@ with the best satellite capture data throughout the time window)
 
 2. Run a supervised machine learning algorithm to detect land cover in each location
 Step A: Train the data by selectioning specific points and areas within the region
-of known land cover (water, buildings, trees, rocks)
-Step B: Run the algorithm to classify each pixel into the same categories
-Step C: Assess accuracy metrics of the model
+of known land cover (water, buildings, trees, rocks).
+Step B: Run the algorithm to classify each pixel into the same categories.
+Step C: Assess accuracy metrics of the model.
 
 3. Compare vegetation loss and building increases across the three time spans to discover economic activity.
