@@ -1,0 +1,83 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww17000\viewh13500\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 // Javascript for Google Earth Engine Code Editor\
+// Get instant approval for Google Earth Engine: signup.earthengine.google.com\
+// Access code editor at: https://code.earthengine.google.com/\
+\
+// Load Arctic Locations\
+\
+// Longyearbyen, Greenland\
+var long = ee.Geometry.Polygon(\
+        [[[15.30, 78.11],\
+          [15.30, 78.14],\
+          [15.45, 78.11],\
+          [15.45, 78.14]]], null, false); \
+\
+// Mumansk, Russia\
+var mumansk = ee.Geometry.Polygon(\
+        [[[32.92, 68.83],\
+          [32.92, 69.05],\
+          [33.25, 68.83],\
+          [33.25, 69.05]]], null, false);\
+  \
+// Reykavik, Iceland\
+var reyk = ee.Geometry.Polygon(\
+        [[[-21.38, 64.00],\
+          [-21.38, 64.12],\
+          [-22.13, 64.00],\
+          [-22.13, 64.12]]], null, false);\
+\
+// Obtain satellite data for 2000 and 2020 for Reykavik, Iceland\
+// Using USA\'92s Landsat 8 satellite for 2020 (launched 2013) and Landsat 7 satellite for 2000 (launched 1999)\
+\
+var reyk21 = ee.ImageCollection("LANDSAT/LC08/C01/T1_RT")\
+  .filterBounds(reyk)\
+  .filterDate('2019-01-01', '2021-01-01')\
+  \
+var reyk01 = ee.ImageCollection("LANDSAT/LE07/C01/T1_RT")\
+  .filterBounds(reyk)\
+  .filterDate('1999-01-01', '2001-01-01')\
+\
+// Generate composite images from the whole year data set\
+var composite21 = ee.Algorithms.Landsat.simpleComposite(\{\
+  collection: reyk21,\
+  asFloat: true\
+\})\
+\
+var composite01 = ee.Algorithms.Landsat.simpleComposite(\{\
+  collection: reyk01,\
+  asFloat: true\
+\})\
+\
+// Obtain visuals for each composite using the 3 bands of visible light from each data set \
+Map.addLayer(composite21, \{bands: ["B4", "B3", "B2"], min:0, max: 0.3\}, "RGB")\
+Map.addLayer(composite01, \{bands: ["B1", "B2", "B3"], min:0, max: 0.3\}, "RGB")\
+\
+// Save images to Google Drive\
+Export.image.toDrive(composite21, 'Reykjavik_2021');\
+Export.image.toDrive(composite01, 'Reykjavik_2001');\
+\
+// Use near-infrared data collected by the satellite to measure Normalized Difference Vegetation Index (NDVI)\
+// Generate visualization of NDVI for each year\
+var ndvi_21 = composite21.normalizedDifference(["B5", "B4"])\
+Map.addLayer(ndvi_21, \{min:0, max:1\} , "NDVI")\
+\
+var ndvi_20 = composite20.normalizedDifference(["B4", "B3"])\
+Map.addLayer(ndvi_20, \{min:0, max:1\} , "NDVI")\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}
