@@ -25,7 +25,7 @@ We seek to discover which nations are preparing for the opportunity of
 a rapid escalation in economic activity in the Arctic in the coming few decades.
 
 There are satellites in orbit that collect electromagnetic data for the entire surface of the earth
-every 2 weeks.  The Landsat satellites from America, along with Sentinel 1 and 2 from the European 
+every 2 weeks.  NASA's Landsat satellites, along with Sentinel 1 and 2 from the European 
 Space Agency, are the main ones that make their data publicly available.
 
 The satellite collects not only visible light, but near-infrared and other "bands" located
