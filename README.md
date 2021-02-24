@@ -42,7 +42,7 @@ Landsat satellite data has 12 variables, as opposed to only 3 for a red, blue, g
 (note that Google Earth Engine has functionality to create nice composite data sets 
 with the best satellite capture data throughout the time window)
 
-2. Run a supervised machine learning algorithm to detect land cover in each location
+2. Run a supervised machine learning algorithm to detect land cover in each location.
 Step A: Train the data by selectioning specific points and areas within the region
 of known land cover (water, buildings, trees, rocks).
 Step B: Run the algorithm to classify each pixel into the same categories.
